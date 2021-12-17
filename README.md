@@ -3,7 +3,7 @@
 
 ## 目录
 
-[决策树](Decision tree/README.md)
+[决策树](Decisiontree/README.md)
 
 [随机森林](Randomforest/README.md)
 
