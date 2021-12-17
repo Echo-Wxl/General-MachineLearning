@@ -77,7 +77,7 @@ $$
 ​	然后计算某个特征A对于数据集D的经验条件熵$H(D|A)$为
 
 $$
-H(D \mid A)=\sum_{i=1}^{n} \frac{\left|D_{i}\right|}{|D|} H\left(D_{i}\right)=\sum_{i=1}^{n} \frac{\left|D_{i}\right|}{|D|}\left(-\sum_{k=1}^{k} \frac{\left|D_{i k}\right|}{\left|D_{i}\right|} \log _{2} \frac{\left|D_{i k}\right|}{\left|D_{i}\right|}\right)
+H(D \mid A)=\sum_{i=1}^{n} \frac{\left|D_{i}\right|}{|D|} H\left(D_{i}\right)=\sum_{i=1}^{n} \frac{\left|D_{i}\right|}{|D|}\left(-\sum_{k=1}^{k} \frac{\left|D_{i k}\right|}{\left|D_{i}\right|} \log_{2} \frac{\left|D_{i k}\right|}{\left|D_{i}\right|}\right)
 $$
 ​	其中，$D_i$表示D中特征A取第i个值的样本子集，$D_{ik}$表示$D_i$中属于第k类的样本子集。
 
@@ -98,7 +98,7 @@ $$
   其中
   
   $$
-  H_{A}(D)=-\sum_{i=1}^{n} \frac{\left|D_{i}\right|}{|D|} \log _{2} \frac{\left|D_{i}\right|}{|D|}
+  H_{A}(D)=-\sum_{i=1}^{n} \frac{\left|D_{i}\right|}{|D|} \log_{2} \frac{\left|D_{i}\right|}{|D|}
   $$
 
 ​	`总结：C4.5使用信息增益率克服信息增益偏好特征数目多的特征，实际上是引入了特征的信息熵作为分母，来对高基数类别进行惩罚。所以C4.5对特征值数目较少的特征有所偏好，既可以处理离散型数据，也可以处理连续型数据，可以是多叉树。`
@@ -244,13 +244,13 @@ $$
 
 首先通过优化问题
 $$
-\min _{s}\left[\min _{c_{1}} \sum_{x_{i} \in R_{1}}\left(y_{i}-c_{1}\right)^{2}+\min _{c_{2}} \sum_{x_{i} \in R_{2}}\left(y_{i}-c_{2}\right)^{2}\right]
+\min_{s}\left[\min_{c_{1}} \sum_{x_{i} \in R_{1}}\left(y_{i}-c_{1}\right)^{2}+\min_{c_{2}} \sum_{x_{i} \in R_{2}}\left(y_{i}-c_{2}\right)^{2}\right]
 $$
 求解训练数据的切分点$s$;
 
 其中
 $$
-R_{1}=\{x \mid x \leqslant s\}, \quad R_{2}=\{x \mid x>s\}
+R_{1}=\{x \mid x \leq s\}, \quad R_{2}=\{x \mid x>s\}
 $$
 容易求得在$R_1,R_2$内使平方损失误差达到最小值的$c_1，c_2$为
 $$
@@ -262,11 +262,11 @@ $$
 
 对各切分点，不难求出相应的$R_1,R_2，c_1，c_2$及
 $$
-m(s)=\min _{a} \sum_{x_{i} \in R_{1}}\left(y_{i}-c_{1}\right)^{2}+\min _{c_{2}} \sum_{x_{i} \in R_{2}}\left(y_{i}-c_{2}\right)^{2}
+m(s)=\min_{a} \sum_{x_{i} \in R_{1}}\left(y_{i}-c_{1}\right)^{2}+\min_{c_{2}} \sum_{x_{i} \in R_{2}}\left(y_{i}-c_{2}\right)^{2}
 $$
 例如，当 $s = 1.5$ 时， $R_{1}=\{1\}, R_{2}=\{2,3, \cdots, 10\}, c_{1}=5.56, c_{2}=7.50$ ，
 $$
-m(s)=\min _{c_{1}} \sum_{x_{i} \in R_{1}}\left(y_{i}-c_{1}\right)^{2}+\min _{c_{2}} \sum_{x_{i} \in R_{2}}\left(y_{i}-c_{2}\right)^{2}=0+15.72=15.72
+m(s)=\min_{c_{1}} \sum_{x_{i} \in R_{1}}\left(y_{i}-c_{1}\right)^{2}+\min_{c_{2}} \sum_{x_{i} \in R_{2}}\left(y_{i}-c_{2}\right)^{2}=0+15.72=15.72
 $$
 得到所有的s取值和对应的m(s)，结果如下：
 $$
