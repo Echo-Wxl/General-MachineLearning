@@ -233,7 +233,7 @@ $$
 因此，对于连续的数据，可以使用样本与平均值的差的平方和作为划分回归树的指标。
 $$
 \begin{array}{l}
-\begin{array}{ccccccccccc}
+\begin{array}{ccccccccccc}\\
 \hline x_{i} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
 \hline y_{i} & 5.56 & 5.70 & 5.91 & 6.40 & 6.80 & 7.05 & 8.90 & 8.70 & 9.00 & 9.05 \\
 \hline
